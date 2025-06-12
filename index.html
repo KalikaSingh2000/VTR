@@ -1,830 +1,1005 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <!-- Basic Page Needs
-================================================== -->
-  <meta charset="utf-8">
-  <title>VTR</title>
-
-  <!-- Mobile Specific Metas
-================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Construction Html5 Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-  <!-- Favicon
-================================================== -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-  <!-- CSS
-================================================== -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
-  <!-- Animation -->
-  <link rel="stylesheet" href="plugins/animate-css/animate.css">
-  <!-- slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-  <!-- Colorbox -->
-  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
-  <!-- Template styles-->
-  <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTR | Premium Turnkey Construction Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a6e;
+            --secondary: #d4af37;
+            --dark: #0d1b2a;
+            --light: #f8f9fa;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+        /* Modern Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: var(--secondary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            color: white;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary);
+            margin-left: 15px;
+        }
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        /* Quote Section */
+        .quote {
+            padding: 80px 8%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            font-size: 1.8rem;
+            font-style: italic;
+            font-weight: 300;
+            position: relative;
+        }
+        .quote:before {
+            content: '"';
+            font-size: 10rem;
+            position: absolute;
+            top: -30px;
+            left: 50px;
+            opacity: 0.1;
+            font-family: serif;
+        }
+        .quote:after {
+            content: '"';
+            font-size: 10rem;
+            position: absolute;
+            bottom: -80px;
+            right: 50px;
+            opacity: 0.1;
+            font-family: serif;
+        }
+        /* About Section */
+        .about {
+            padding: 120px 8%;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-img {
+            flex: 1;
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3') center/cover;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .about-content {
+            flex: 1;
+        }
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 5px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 0;
+        }
+        .about p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        .highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        /* Partners Section */
+        .partners {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .partner {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .partner:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .partner-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+        .partner-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .partner h3 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .partner h4 {
+            text-align: center;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .partner ul {
+            list-style: none;
+        }
+        .partner li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .partner li:before {
+            content: '•';
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+        /* Legacy Section */
+        .legacy {
+            padding: 100px 8%;
+            background-color: var(--primary);
+            color: white;
+        }
+        .legacy .section-title {
+            color: white;
+        }
+        .legacy .section-title:after {
+            background: var(--secondary);
+        }
+        .legacy-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(255,255,255,0.1);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .sectors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .sector {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--secondary);
+        }
+        /* Services Section */
+        .services {
+            padding: 120px 8%;
+            background-color: var(--light);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 5px solid var(--secondary);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .service-card ul {
+            list-style: none;
+        }
+        .service-card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .service-card li:before {
+            content: '→';
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+        /* Process Section */
+        .process {
+            padding: 100px 8%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+        }
+        .process .section-title {
+            color: white;
+        }
+        .process .section-title:after {
+            background: var(--secondary);
+        }
+        .process-steps {
+            display: flex;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .step {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 40px;
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        .step p {
+            opacity: 0.9;
+        }
+        .step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            right: -35px;
+            top: 30px;
+            opacity: 0.5;
+        }
+        /* Comparison Section */
+        .comparison {
+            padding: 120px 8%;
+        }
+        .comparison-cards {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .comparison-card {
+            flex: 1;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .competitors {
+            border: 2px solid rgba(0,0,0,0.1);
+        }
+        .vtr-card {
+            background: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .vtr-card:after {
+            content: 'VTR';
+            position: absolute;
+            font-size: 15rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.03);
+            bottom: -50px;
+            right: -30px;
+            z-index: 0;
+        }
+        .comparison-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        .vtr-card h3 {
+            color: var(--secondary);
+        }
+        .comparison-card ul {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+        .comparison-card li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .competitors li:before {
+            content: '✖';
+            color: #ff4d4d;
+            position: absolute;
+            left: 0;
+        }
+        .vtr-card li:before {
+            content: '✓';
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+        /* Clients Section */
+        .clients {
+            padding: 100px 8%;
+            background-color: var(--light);
+            text-align: center;
+        }
+        .client-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            align-items: center;
+        }
+        .client-logo {
+            height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        .client-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        /* CTA Section */
+        .cta {
+            padding: 120px 8%;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 8% 30px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column li {
+            margin-bottom: 15px;
+        }
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .footer-column a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width: 992px) {
+            .about {
+                flex-direction: column;
+            }
+            .about-img {
+                width: 100%;
+            }
+            .comparison-cards {
+                flex-direction: column;
+            }
+            .step:not(:last-child):after {
+                display: none;
+            }
+            .step {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .quote {
+                font-size: 1.4rem;
+                padding: 60px 8%;
+            }
+            .btn {
+                padding: 12px 25px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="body-inner">
-
-    <div id="top-bar" class="top-bar">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-8">
-            <ul class="top-info text-center text-md-left">
-              <li><i class="fas fa-map-marker-alt"></i>
-                <p class="info-text">VTR Incorporate, India</p>
-              </li>
-            </ul>
-          </div>
-          <!--/ Top info end -->
-
-          <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
-            <ul class="list-unstyled">
-              <li>
-                <a title="Facebook" href="https://facebbok.com/themefisher.com">
-                  <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
-                </a>
-                <a title="Twitter" href="https://twitter.com/themefisher.com">
-                  <span class="social-icon"><i class="fab fa-twitter"></i></span>
-                </a>
-                <a title="Instagram" href="https://instagram.com/themefisher.com">
-                  <span class="social-icon"><i class="fab fa-instagram"></i></span>
-                </a>
-                <a title="Linkdin" href="https://github.com/themefisher.com">
-                  <span class="social-icon"><i class="fab fa-github"></i></span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!--/ Top social end -->
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">V<span>TR</span></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#legacy">Legacy</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#contact">Contact</a>
         </div>
-        <!--/ Content row end -->
-      </div>
-      <!--/ Container end -->
-    </div>
-    <!--/ Topbar end -->
-    <!-- Header start -->
-    <header id="header" class="header-two">
-      <div class="site-navigation">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg navbar-light p-0">
+    </nav>
 
-                <div class="logo">
-                  <a class="d-block" href="index.html">
-                    <img loading="lazy" src="images/Vtr.png" alt="VTR">
-                  </a>
-                </div><!-- logo end -->
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div id="navbar-collapse" class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav ml-auto align-items-center">
-                    <li class="nav-item">
-                      <a href="index.html" class="nav-link ">Home </a>
-
-                    </li>
-
-                    <li class="nav-item">
-                      <a href="about.html">About Us</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                      <a href="#" class="nav-link">Services </a>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-
-                  </ul>
-                </div>
-              </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium <span>Turnkey</span> Construction Solutions</h1>
+            <p>14+ years of excellence in delivering high-end residential, commercial, industrial, hospitality, and cultural projects across India.</p>
+            <div>
+                <a href="#contact" class="btn">Get Started</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
             </div>
-            <!--/ Col end -->
-          </div>
-          <!--/ Row end -->
         </div>
-        <!--/ Container end -->
-
-      </div>
-      <!--/ Navigation end -->
-    </header>
-    <!--/ Header end -->
-
-    <div class="banner-carousel banner-carousel-2 mb-0">
-      <div class="banner-carousel-item" style="background-image:url(images/banner/homebanner.jpeg)">
-        <div class="container">
-          <div class="box-slider-content">
-            <div class="box-slider-text">
-              <h2 class="box-slide-title">8 Years Of Excellence In</h2>
-              <h3 class="box-slide-sub-title">Construction Industry</h3>
-              <p class="box-slide-description">You have ideas, goals, and dreams. We have a culturally diverse, forward
-                thinking team looking for talent like.</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="banner-carousel-item" style="background-image:url(images/banner/homebanner1.jpeg)">
-        <div class="slider-content text-left">
-          <div class="container">
-            <div class="box-slider-content">
-              <div class="box-slider-text">
-                <h2 class="box-slide-title">When Services Matters</h2>
-                <h3 class="box-slide-sub-title">Your Choice is Simple</h3>
-                <p class="box-slide-description">You have ideas, goals, and dreams. We have a culturally diverse,
-                  forward
-                  thinking team looking for talent like.</p>
-                <p><a href="about.html" class="slider btn btn-primary" aria-label="about-us">Know Us</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <section id="ts-features" class="ts-features pb-2">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="ts-service-box">
-              <div class="ts-service-image-wrapper">
-                <img loading="lazy" class="w-100" src="images/services/image73.jpeg" alt="service-image">
-              </div>
-              <div class="d-flex">
-                <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon1.png" alt="service-icon" />
-                </div>
-                <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Zero Harm Everyday</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for
-                    talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i
-                      class="fa fa-caret-right"></i> Learn more</a>
-                </div>
-              </div>
-            </div><!-- Service1 end -->
-          </div><!-- Col 1 end -->
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="ts-service-box">
-              <div class="ts-service-image-wrapper">
-                <img loading="lazy" class="w-100 h-50" src="images/services/image74.jpeg" alt="service-image">
-              </div>
-              <div class="d-flex">
-                <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon2.png" alt="service-icon" />
-                </div>
-                <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Virtual Construction</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for
-                    talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i
-                      class="fa fa-caret-right"></i> Learn more</a>
-                </div>
-              </div>
-            </div><!-- Service2 end -->
-          </div><!-- Col 2 end -->
-
-          <div class="col-lg-4 col-md-6 mb-5">
-            <div class="ts-service-box">
-              <div class="ts-service-image-wrapper">
-                <img loading="lazy" class="w-100" src="images/services/service3.jpg" alt="service-image">
-              </div>
-              <div class="d-flex">
-                <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon3.png" alt="service-icon" />
-                </div>
-                <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Build To Last</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for
-                    talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i
-                      class="fa fa-caret-right"></i> Learn more</a>
-                </div>
-              </div>
-            </div><!-- Service3 end -->
-          </div><!-- Col 3 end -->
-        </div><!-- Content row end -->
-      </div><!-- Container end -->
-    </section><!-- Feature are end -->
-
-    <section id="ts-service-area" class="ts-service-area pb-0">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12">
-            <h2 class="section-title">We Are Specialists In</h2>
-            <h3 class="section-sub-title">What We Do</h3>
-          </div>
-        </div>
-        <!--/ Title row end -->
-
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img me-3">
-                <i class="fas fa-place-of-worship fa-2x"></i>
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Residential Villas & Apartments</a></h3>
-                <p>Elegant and functional living spaces designed with comfort, aesthetics, and sustainability in mind.
-                </p>
-              </div>
-            </div>
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img me-3">
-                <i class="fas fa-industry fa-2x"></i>
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Commercial & Corporate Offices</a></h3>
-                <p>Innovative workspaces crafted for productivity, collaboration, and a modern corporate image.</p>
-              </div>
-            </div>
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img me-3">
-                <i class="fas fa-hotel fa-2x"></i>
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Hospitality (Hotels & Resorts)</a></h3>
-                <p>Stylish and welcoming environments for leisure and business travelers, built to offer world-class
-                  experiences.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 text-center">
-            <img loading="lazy" class="img-fluid" src="images/services/service-center.jpg" alt="Service Center Image">
-          </div>
-
-          <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img me-3">
-                <i class="fas fa-landmark fa-2x"></i>
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Cultural & Religious Spaces</a></h3>
-                <p>Architectural expressions of tradition and spirituality, respecting cultural identities and community
-                  needs.</p>
-              </div>
-            </div>
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img me-3">
-                <i class="fas fa-industry fa-2x"></i>
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Industrial & Warehousing</a></h3>
-                <p>Efficient, scalable, and secure infrastructure for logistics, manufacturing, and industrial
-                  operations.</p>
-              </div>
-            </div>
-
-            <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img me-3">
-                <i class="fas fa-shopping-cart fa-2x"></i>
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Retail Showrooms & Experience Centers</a></h3>
-                <p>Immersive spaces that bring brands to life, designed to engage, inform, and convert customers
-                  effectively.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!--/ Container end -->
-    </section><!-- Service end -->
-
-    <section id="project-area" class="project-area solid-bg">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-12">
-            <h2 class="section-title">Work of Excellence</h2>
-            <h3 class="section-sub-title">Recent Projects</h3>
-          </div>
-        </div>
-        <!--/ Title row end -->
-
-        <div class="row">
-          <div class="col-12">
-            <div class="shuffle-btn-group">
-              <label class="active" for="all">
-                <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Show All
-              </label>
-              <label for="commercial">
-                <input type="radio" name="shuffle-filter" id="commercial" value="commercial">Commercial
-              </label>
-              <label for="education">
-                <input type="radio" name="shuffle-filter" id="education" value="education">Education
-              </label>
-              <label for="government">
-                <input type="radio" name="shuffle-filter" id="government" value="government">Government
-              </label>
-              <label for="infrastructure">
-                <input type="radio" name="shuffle-filter" id="infrastructure" value="infrastructure">Infrastructure
-              </label>
-              <label for="residential">
-                <input type="radio" name="shuffle-filter" id="residential" value="residential">Residential
-              </label>
-              <label for="healthcare">
-                <input type="radio" name="shuffle-filter" id="healthcare" value="healthcare">Healthcare
-              </label>
-            </div><!-- project filter end -->
-
-
-            <div class="row shuffle-wrapper">
-              <div class="col-1 shuffle-sizer"></div>
-
-              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
-                <div class="project-img-container">
-                  <a class="gallery-popup" href="images/projects/project1.jpg" aria-label="project-img">
-                    <img class="img-fluid" src="images/projects/project1.jpg" alt="project-img">
-                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                  </a>
-                  <div class="project-item-info">
-                    <div class="project-item-info-content">
-                      <h3 class="project-item-title">
-                        <a href="projects-single.html">Capital Teltway Building</a>
-                      </h3>
-                      <p class="project-cat">Commercial, Interiors</p>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- shuffle item 1 end -->
-
-              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;healthcare&quot;]">
-                <div class="project-img-container">
-                  <a class="gallery-popup" href="images/projects/project2.jpg" aria-label="project-img">
-                    <img class="img-fluid" src="images/projects/project2.jpg" alt="project-img">
-                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                  </a>
-                  <div class="project-item-info">
-                    <div class="project-item-info-content">
-                      <h3 class="project-item-title">
-                        <a href="projects-single.html">Ghum Touch Hospital</a>
-                      </h3>
-                      <p class="project-cat">Healthcare</p>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- shuffle item 2 end -->
-
-              <div class="col-lg-4 col-md-6 shuffle-item"
-                data-groups="[&quot;infrastructure&quot;,&quot;commercial&quot;]">
-                <div class="project-img-container">
-                  <a class="gallery-popup" href="images/projects/project3.jpg" aria-label="project-img">
-                    <img class="img-fluid" src="images/projects/project3.jpg" alt="project-img">
-                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                  </a>
-                  <div class="project-item-info">
-                    <div class="project-item-info-content">
-                      <h3 class="project-item-title">
-                        <a href="projects-single.html">TNT East Facility</a>
-                      </h3>
-                      <p class="project-cat">Government</p>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- shuffle item 3 end -->
-
-              <div class="col-lg-4 col-md-6 shuffle-item"
-                data-groups="[&quot;education&quot;,&quot;infrastructure&quot;]">
-                <div class="project-img-container">
-                  <a class="gallery-popup" href="images/projects/project4.jpg" aria-label="project-img">
-                    <img class="img-fluid" src="images/projects/project4.jpg" alt="project-img">
-                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                  </a>
-                  <div class="project-item-info">
-                    <div class="project-item-info-content">
-                      <h3 class="project-item-title">
-                        <a href="projects-single.html">Narriot Headquarters</a>
-                      </h3>
-                      <p class="project-cat">Infrastructure</p>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- shuffle item 4 end -->
-
-              <div class="col-lg-4 col-md-6 shuffle-item"
-                data-groups="[&quot;infrastructure&quot;,&quot;education&quot;]">
-                <div class="project-img-container">
-                  <a class="gallery-popup" href="images/projects/project5.jpg" aria-label="project-img">
-                    <img class="img-fluid" src="images/projects/project5.jpg" alt="project-img">
-                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                  </a>
-                  <div class="project-item-info">
-                    <div class="project-item-info-content">
-                      <h3 class="project-item-title">
-                        <a href="projects-single.html">Kalas Metrorail</a>
-                      </h3>
-                      <p class="project-cat">Infrastructure</p>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- shuffle item 5 end -->
-
-              <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;residential&quot;]">
-                <div class="project-img-container">
-                  <a class="gallery-popup" href="images/projects/project6.jpg" aria-label="project-img">
-                    <img class="img-fluid" src="images/projects/project6.jpg" alt="project-img">
-                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
-                  </a>
-                  <div class="project-item-info">
-                    <div class="project-item-info-content">
-                      <h3 class="project-item-title">
-                        <a href="projects-single.html">Ancraft Avenue House</a>
-                      </h3>
-                      <p class="project-cat">Residential</p>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- shuffle item 6 end -->
-            </div><!-- shuffle end -->
-          </div>
-
-          <div class="col-12">
-            <div class="general-btn text-center">
-              <a class="btn btn-primary" href="projects.html">View All Projects</a>
-            </div>
-          </div>
-
-        </div><!-- Content row end -->
-      </div>
-      <!--/ Container end -->
-    </section><!-- Project area end -->
-
-    <section class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="column-title">Testimonials</h3>
-
-            <div id="testimonial-slide" class="testimonial-slide">
-              <div class="item">
-                <div class="quote-item">
-                  <span class="quote-text">
-                    Question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last
-                    view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the
-                    subline of her own road.
-                  </span>
-
-                  <div class="quote-item-footer">
-                    <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial1.png"
-                      alt="testimonial">
-                    <div class="quote-item-info">
-                      <h3 class="quote-author">Gabriel Denis</h3>
-                      <span class="quote-subtext">Chairman, OKT</span>
-                    </div>
-                  </div>
-                </div><!-- Quote item end -->
-              </div>
-              <!--/ Item 1 end -->
-
-              <div class="item">
-                <div class="quote-item">
-                  <span class="quote-text">
-                    Experience 25+ Years
-                    Civil
-                    Engineer & PG in Construction
-                    Management
-                    Huge
-                    experience
-                    in
-                    large-scale
-                    construction: hotels, factories, homes,
-                    Temples Etc.
-                    Master of strategy, planning, design liaison
-                    & execution frameworks
-                    Known for Timely Delivery & Technical
-                    Oversight
-                    Bridges the gap between architects,
-                    consultants, and on-site teams.
-                  </span>
-
-                  <div class="quote-item-footer">
-                    <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial2.png"
-                      alt="testimonial">
-                    <div class="quote-item-info">
-                      <h3 class="quote-author">Pankaj Sharma</h3>
-                      <span class="quote-subtext">Founder, Strategic Advisor</span>
-                    </div>
-                  </div>
-                </div><!-- Quote item end -->
-              </div>
-              <!--/ Item 2 end -->
-
-              <div class="item">
-                <div class="quote-item">
-                  <span class="quote-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitoa tion ullamco laboris
-                    nisi ut commodo consequat.
-                  </span>
-
-                  <div class="quote-item-footer">
-                    <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial3.png"
-                      alt="testimonial">
-                    <div class="quote-item-info">
-                      <h3 class="quote-author"></h3>
-                      <span class="quote-subtext">Director, AKT</span>
-                    </div>
-                  </div>
-                </div><!-- Quote item end -->
-              </div>
-              <!--/ Item 3 end -->
-
-            </div>
-            <!--/ Testimonial carousel end-->
-          </div><!-- Col end -->
-
-          <div class="col-lg-6 mt-5 mt-lg-0">
-
-            <h3 class="column-title">Happy Clients</h3>
-
-            <div class="row all-clients">
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client1.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 1 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client2.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 2 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client3.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 3 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client4.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 4 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client5.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 5 end -->
-
-              <div class="col-sm-4 col-6">
-                <figure class="clients-logo">
-                  <a href="#!"><img loading="lazy" class="img-fluid" src="images/clients/client6.png"
-                      alt="clients-logo" /></a>
-                </figure>
-              </div><!-- Client 6 end -->
-
-            </div><!-- Clients row end -->
-
-          </div><!-- Col end -->
-
-        </div>
-        <!--/ Content row end -->
-      </div>
-      <!--/ Container end -->
-    </section><!-- Content end -->
-
-    <section class="subscribe no-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="subscribe-call-to-acton">
-              <h3>Can We Help?</h3>
-              <h4>(+9) 847-291-4353</h4>
-            </div>
-          </div><!-- Col end -->
-
-          <div class="col-lg-8">
-            <div class="ts-newsletter row align-items-center">
-              <div class="col-md-5 newsletter-introtext">
-                <h4 class="text-white mb-0">Newsletter Sign-up</h4>
-                <p class="text-white">Latest updates and news</p>
-              </div>
-
-              <div class="col-md-7 newsletter-form">
-                <form action="#" method="post">
-                  <div class="form-group">
-                    <label for="newsletter-email" class="content-hidden">Newsletter Email</label>
-                    <input type="email" name="email" id="newsletter-email" class="form-control form-control-lg"
-                      placeholder="Your your email and hit enter" autocomplete="off">
-                  </div>
-                </form>
-              </div>
-            </div><!-- Newsletter end -->
-          </div><!-- Col end -->
-
-        </div><!-- Content row end -->
-      </div>
-      <!--/ Container end -->
     </section>
-    <!--/ subscribe end -->
 
-    <section id="news" class="news">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12">
-            <h2 class="section-title">Work of Excellence</h2>
-            <h3 class="section-sub-title">Recent Projects</h3>
-          </div>
-        </div>
-        <!--/ Title row end -->
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="latest-post">
-              <div class="latest-post-media">
-                <a href="news-single.html" class="latest-post-img">
-                  <img loading="lazy" class="img-fluid" src="images/news/news1.jpg" alt="img">
-                </a>
-              </div>
-              <div class="post-body">
-                <h4 class="post-title">
-                  <a href="news-single.html" class="d-inline-block">We Just Completes $17.6 million Medical Clinic in
-                    Mid-Missouri</a>
-                </h4>
-                <div class="latest-post-meta">
-                  <span class="post-item-date">
-                    <i class="fa fa-clock-o"></i> July 20, 2017
-                  </span>
-                </div>
-              </div>
-            </div><!-- Latest post end -->
-          </div><!-- 1st post col end -->
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="latest-post">
-              <div class="latest-post-media">
-                <a href="news-single.html" class="latest-post-img">
-                  <img loading="lazy" class="img-fluid" src="images/news/news2.jpg" alt="img">
-                </a>
-              </div>
-              <div class="post-body">
-                <h4 class="post-title">
-                  <a href="news-single.html" class="d-inline-block">Thandler Airport Water Reclamation Facility
-                    Expansion Project Named</a>
-                </h4>
-                <div class="latest-post-meta">
-                  <span class="post-item-date">
-                    <i class="fa fa-clock-o"></i> June 17, 2017
-                  </span>
-                </div>
-              </div>
-            </div><!-- Latest post end -->
-          </div><!-- 2nd post col end -->
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="latest-post">
-              <div class="latest-post-media">
-                <a href="news-single.html" class="latest-post-img">
-                  <img loading="lazy" class="img-fluid" src="images/news/news3.jpg" alt="img">
-                </a>
-              </div>
-              <div class="post-body">
-                <h4 class="post-title">
-                  <a href="news-single.html" class="d-inline-block">Silicon Bench and Cornike Begin Construction Solar
-                    Facilities</a>
-                </h4>
-                <div class="latest-post-meta">
-                  <span class="post-item-date">
-                    <i class="fa fa-clock-o"></i> Aug 13, 2017
-                  </span>
-                </div>
-              </div>
-            </div><!-- Latest post end -->
-          </div><!-- 3rd post col end -->
-        </div>
-        <!--/ Content row end -->
-
-        <div class="general-btn text-center mt-4">
-          <a class="btn btn-primary" href="news-left-sidebar.html">See All Posts</a>
-        </div>
-
-      </div>
-      <!--/ Container end -->
+    <!-- Quote Section -->
+    <section class="quote">
+        "With VTR, you don't just get a contractor — you get a strategic construction partner."
     </section>
-    <!--/ News end -->
 
-    <footer id="footer" class="footer bg-overlay">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-4 col-md-6 footer-widget footer-about">
-              <h3 class="widget-title">About Us</h3>
-              <img loading="lazy" class="footer-logo" src="images/Vtr.png" alt="VTR">
-              <p>We convert architectural vision into functional, flawless reality .</p>
-              <div class="footer-social">
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-img"></div>
+        <div class="about-content">
+            <h2 class="section-title">Who We Are</h2>
+            <p><span class="highlight">VTR</span> is a premium turnkey contracting company founded by three accomplished partners — Ranvir Singh, Arun Singh and Pankaj Sharma — with cumulative experience of more than 14 years successful delivery of high end complex projects.</p>
+            <p>After years of executing high-end residential, commercial, industrial, hospitality, and cultural projects across India, we are now taking our execution excellence to the next level through VTR — a bold, focused step into full-scale design-to-delivery contracting.</p>
+            
+            <div class="partners">
+                <div class="partner">
+                    <div class="partner-img">
+                        <img src="./images/Ranveer.jpeg" alt="Ranvir Singh">
+                    </div>
+                    <h3>Ranvir Singh</h3>
+                    <h4>Chief Execution Manager</h4>
+                    <ul>
+                        <li>15+ Years Experience</li>
+                        <li>Specialist in Execution Strategy</li>
+                        <li>Expert in Client Relations</li>
+                        <li>Personally oversees quality</li>
+                    </ul>
+                </div>
+                <div class="partner">
+                    <div class="partner-img">
+                        <img src="./images/arun.jpeg" alt="Arun Singh">
+                    </div>
+                    <h3>Arun Singh</h3>
+                    <h4>Procurement Head</h4>
+                    <ul>
+                        <li>15+ Years Experience</li>
+                        <li>Vendor & Contract Management</li>
+                        <li>Resource Allocation Expert</li>
+                        <li>Negotiation Specialist</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section class="legacy" id="legacy">
+        <h2 class="section-title">Our Legacy</h2>
+        <p>Over the last 14 years under Maze Construction Projects Solution we have delivered excellence across multiple sectors:</p>
+        
+        <div class="legacy-stats">
+            <div class="stat-card">
+                <div class="stat-number">160+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">14</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 50px; color: var(--secondary);">Sectors We've Served:</h3>
+        <div class="sectors">
+            <div class="sector">Luxury Residential</div>
+            <div class="sector">Premium Corporate Offices</div>
+            <div class="sector">Religious & Cultural Buildings</div>
+            <div class="sector">Commercial Spaces</div>
+            <div class="sector">Hotels & Hospitality</div>
+            <div class="sector">Retail & Showrooms</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Services We Offer</h2>
+        <p>Under VTR, we now deliver start-to-finish turnkey contracting solutions:</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Civil Construction</h3>
                 <ul>
-                  <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
-                        class="fab fa-facebook-f"></i></a></li>
-                  <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a></li>
-                  <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a>
-                  </li>
+                    <li>Complete RCC Works</li>
+                    <li>Structural Engineering</li>
+                    <li>Foundation to Finishing</li>
                 </ul>
-              </div><!-- Footer social end -->
-            </div><!-- Col end -->
-
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-              <h3 class="widget-title">VTR</h3>
-              <ul class="list-arrow">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">about-us</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-              </ul>
-
-            </div><!-- Col end -->
-          </div><!-- Row end -->
-        </div><!-- Container end -->
-      </div><!-- Footer main end -->
-
-      <div class="copyright">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-12">
-              <div class="copyright-info text-center">
-                <span>Copyright &copy;
-                  <script>
-                    document.write(new Date().getFullYear())
-                  </script>, Designed &amp; Developed by <a href="#">Kalika Singh</a>
-                </span>
-              </div>
             </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-couch"></i>
+                </div>
+                <h3>Interior Fit-outs</h3>
+                <ul>
+                    <li>Luxury Residential Interiors</li>
+                    <li>Commercial Spaces</li>
+                    <li>Custom Carpentry</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>MEP Services</h3>
+                <ul>
+                    <li>Mechanical Systems</li>
+                    <li>Electrical Works</li>
+                    <li>Plumbing Solutions</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Project Management</h3>
+                <ul>
+                    <li>Cost Control</li>
+                    <li>Quality Checks</li>
+                    <li>Scheduling</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Material Sourcing</h3>
+                <ul>
+                    <li>Vendor Management</li>
+                    <li>Premium Materials</li>
+                    <li>Cost Negotiation</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Handover & Support</h3>
+                <ul>
+                    <li>Final Inspection</li>
+                    <li>Warranty Handling</li>
+                    <li>Post-completion Care</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <h2 class="section-title">Our Process</h2>
+        <p>Our structured approach ensures seamless project execution from concept to completion:</p>
+        
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Client Brief</h3>
+                <p>Detailed requirement analysis and scope finalization</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Design Coordination</h3>
+                <p>Collaboration with architects and consultants</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Cost Planning</h3>
+                <p>Transparent estimation and budgeting</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Execution</h3>
+                <p>Precision construction with quality materials</p>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Quality Control</h3>
+                <p>Daily supervision and standards adherence</p>
+            </div>
+            <div class="step">
+                <div class="step-number">6</div>
+                <h3>Handover</h3>
+                <p>Final delivery with post-completion support</p>
+            </div>
+        </div>
+    </section>
 
-          </div><!-- Row end -->
+    <!-- Comparison Section -->
+    <section class="comparison" id="why-us">
+        <h2 class="section-title">Why Choose VTR</h2>
+        <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem; font-style: italic;">"Other contractors build. We craft. We manage. We deliver."</p>
+        
+        <div class="comparison-cards">
+            <div class="comparison-card competitors">
+                <h3>Typical Contractors</h3>
+                <ul>
+                    <li>Short-term or limited scope experience</li>
+                    <li>Delegated to junior staff or subcontractors</li>
+                    <li>Mostly limited to civil or interiors only</li>
+                    <li>Lack understanding of project life cycle</li>
+                    <li>Local, unverified vendors with quality issues</li>
+                    <li>Standard execution with limited quality control</li>
+                    <li>No proactive or transactional approach</li>
+                    <li>Delays due to lack of planning</li>
+                    <li>Minimal or no post-handover care</li>
+                </ul>
+            </div>
+            <div class="comparison-card vtr-card">
+                <h3>VTR Advantage</h3>
+                <ul>
+                    <li>Backed by 14+ years of PMC & execution via Maze</li>
+                    <li>Active micro management of project on regular basis</li>
+                    <li>True turnkey - Civil, Interiors, MEP, Finishes</li>
+                    <li>Thorough understanding from concept to commissioning</li>
+                    <li>Seamless coordination with architects & consultants</li>
+                    <li>Proactive, collaborative approach</li>
+                    <li>Pre-vetted, pan-India vendor network</li>
+                    <li>High-end finish with attention to detail</li>
+                    <li>Professionally planned, realistic timelines</li>
+                    <li>Structured support and warranty handling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-          <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-            <button class="btn btn-primary" title="Back to Top">
-              <i class="fa fa-angle-double-up"></i>
-            </button>
-          </div>
+    <!-- Clients Section -->
+    <section class="clients">
+        <h2 class="section-title">Our Esteemed Clients</h2>
+        <p>Trusted by leading brands across industries</p>
+        
+        <div class="client-logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Audi_logo_detail.png" alt="Audi" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Jaguar_logo_detail.png" alt="Jaguar" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/JW_Marriott_logo.png" alt="JW Marriott" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Tata_logo.png" alt="TATA" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Hero_MotoCorp_logo.png" alt="Hero" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/KPMG_logo.png" alt="KPMG" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Lux_Industries_logo.png" alt="LUX Industries" class="client-logo">
+        </div>
+    </section>
 
-        </div><!-- Container end -->
-      </div><!-- Copyright end -->
-    </footer><!-- Footer end -->
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <h2>Ready to Build Excellence Together?</h2>
+        <p>Contact us today to discuss your next project with our strategic construction partners.</p>
+        <a href="#contact" class="btn">Get a Free Consultation</a>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>VTR Constructions</h3>
+                <p>Premium turnkey contracting solutions with 14+ years of execution excellence across India.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#why-us">Why Choose Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Turnkey Construction</a></li>
+                    <li><a href="#">Interior Fit-outs</a></li>
+                    <li><a href="#">MEP Services</a></li>
+                    <li><a href="#">Project Management</a></li>
+                    <li><a href="#">Renovation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Construction Ave, Mumbai, India</li>
+                    <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-envelope"></i> contact@vtrconstructions.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 VTR Constructions. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Javascript Files
-  ================================================== -->
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-    <!-- initialize jQuery Library -->
-    <script src="plugins/jQuery/jquery.min.js"></script>
-    <!-- Bootstrap jQuery -->
-    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
-    <!-- Slick Carousel -->
-    <script src="plugins/slick/slick.min.js"></script>
-    <script src="plugins/slick/slick-animation.min.js"></script>
-    <!-- Color box -->
-    <script src="plugins/colorbox/jquery.colorbox.js"></script>
-    <!-- shuffle -->
-    <script src="plugins/shuffle/shuffle.min.js" defer></script>
+        // Animation on scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.about-content, .about-img, .service-card, .step, .comparison-card');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if(position < screenPosition) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
 
+        // Initialize elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements
+            const animateElements = document.querySelectorAll('.about-content, .about-img, .service-card, .step, .comparison-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(50px)';
+                el.style.transition = 'all 0.8s ease';
+            });
 
-    <!-- Google Map API Key-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
-    <!-- Google Map Plugin-->
-    <script src="plugins/google-map/map.js" defer></script>
-
-    <!-- Template custom -->
-    <script src="js/script.js"></script>
-
-  </div><!-- Body inner end -->
+            // Delay for steps animation
+            document.querySelectorAll('.step').forEach((step, index) => {
+                step.style.transitionDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
-
 </html>
