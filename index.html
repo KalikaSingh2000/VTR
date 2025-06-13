@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,21 +13,24 @@
             --dark: #0d1b2a;
             --light: #f8f9fa;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
         }
+
         body {
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.8;
         }
+
         /* Modern Navbar */
         .navbar {
             background-color: white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             padding: 20px 8%;
             display: flex;
             justify-content: space-between;
@@ -35,19 +39,23 @@
             top: 0;
             z-index: 1000;
         }
+
         .logo {
             font-size: 32px;
             font-weight: 800;
             color: var(--primary);
             letter-spacing: 1px;
         }
+
         .logo span {
             color: var(--secondary);
         }
+
         .nav-links {
             display: flex;
             gap: 30px;
         }
+
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
@@ -55,6 +63,7 @@
             position: relative;
             transition: all 0.3s;
         }
+
         .nav-links a:after {
             content: '';
             position: absolute;
@@ -65,16 +74,19 @@
             left: 0;
             transition: width 0.3s;
         }
+
         .nav-links a:hover {
             color: var(--primary);
         }
+
         .nav-links a:hover:after {
             width: 100%;
         }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -84,23 +96,28 @@
             padding: 0 8%;
             color: white;
         }
+
         .hero-content {
             max-width: 800px;
         }
+
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 20px;
             line-height: 1.2;
         }
+
         .hero h1 span {
             color: var(--secondary);
             font-weight: 700;
         }
+
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 40px;
             opacity: 0.9;
         }
+
         .btn {
             display: inline-block;
             padding: 15px 35px;
@@ -115,21 +132,25 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .btn:hover {
             background-color: transparent;
             color: var(--secondary);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
         .btn-outline {
             background-color: transparent;
             color: var(--secondary);
             margin-left: 15px;
         }
+
         .btn-outline:hover {
             background-color: var(--secondary);
             color: var(--dark);
         }
+
         /* Quote Section */
         .quote {
             padding: 80px 8%;
@@ -141,6 +162,7 @@
             font-weight: 300;
             position: relative;
         }
+
         .quote:before {
             content: '"';
             font-size: 10rem;
@@ -150,6 +172,7 @@
             opacity: 0.1;
             font-family: serif;
         }
+
         .quote:after {
             content: '"';
             font-size: 10rem;
@@ -159,6 +182,7 @@
             opacity: 0.1;
             font-family: serif;
         }
+
         /* About Section */
         .about {
             padding: 120px 8%;
@@ -166,22 +190,26 @@
             gap: 60px;
             align-items: center;
         }
+
         .about-img {
             flex: 1;
             height: 600px;
             background: url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3') center/cover;
             border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
+
         .about-content {
             flex: 1;
         }
+
         .section-title {
             font-size: 2.8rem;
             color: var(--primary);
             margin-bottom: 30px;
             position: relative;
         }
+
         .section-title:after {
             content: '';
             position: absolute;
@@ -191,14 +219,17 @@
             bottom: -10px;
             left: 0;
         }
+
         .about p {
             margin-bottom: 25px;
             font-size: 1.1rem;
         }
+
         .highlight {
             color: var(--primary);
             font-weight: 700;
         }
+
         /* Partners Section */
         .partners {
             display: flex;
@@ -206,19 +237,22 @@
             margin-top: 50px;
             flex-wrap: wrap;
         }
+
         .partner {
             flex: 1;
             min-width: 250px;
             background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s;
         }
+
         .partner:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
+
         .partner-img {
             width: 100px;
             height: 100px;
@@ -227,145 +261,173 @@
             margin: 0 auto 20px;
             overflow: hidden;
         }
+
         .partner-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .partner h3 {
             text-align: center;
             color: var(--primary);
             margin-bottom: 10px;
         }
+
         .partner h4 {
             text-align: center;
             color: var(--secondary);
             font-weight: 600;
             margin-bottom: 15px;
         }
+
         .partner ul {
             list-style: none;
         }
+
         .partner li {
             margin-bottom: 8px;
             position: relative;
             padding-left: 20px;
         }
+
         .partner li:before {
             content: '•';
             color: var(--secondary);
             position: absolute;
             left: 0;
         }
+
         /* Legacy Section */
         .legacy {
             padding: 100px 8%;
             background-color: var(--primary);
             color: white;
         }
+
         .legacy .section-title {
             color: white;
         }
+
         .legacy .section-title:after {
             background: var(--secondary);
         }
+
         .legacy-stats {
             display: flex;
             gap: 30px;
             margin-top: 50px;
             flex-wrap: wrap;
         }
+
         .stat-card {
             flex: 1;
             min-width: 200px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 40px 30px;
             border-radius: 10px;
             text-align: center;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
             color: var(--secondary);
             margin-bottom: 10px;
         }
+
         .stat-label {
             font-size: 1.2rem;
             opacity: 0.9;
         }
+
         .sectors {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             margin-top: 40px;
         }
+
         .sector {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 10px 20px;
             border-radius: 50px;
             border: 1px solid var(--secondary);
         }
+
         /* Services Section */
         .services {
             padding: 120px 8%;
             background-color: var(--light);
         }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
+
         .service-card {
             background: white;
             padding: 40px 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s;
             border-top: 5px solid var(--secondary);
         }
+
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
+
         .service-icon {
             font-size: 3rem;
             color: var(--secondary);
             margin-bottom: 20px;
         }
+
         .service-card h3 {
             color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
+
         .service-card ul {
             list-style: none;
         }
+
         .service-card li {
             margin-bottom: 10px;
             position: relative;
             padding-left: 25px;
         }
+
         .service-card li:before {
             content: '→';
             color: var(--secondary);
             position: absolute;
             left: 0;
         }
+
         /* Process Section */
         .process {
             padding: 100px 8%;
             background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
             color: white;
         }
+
         .process .section-title {
             color: white;
         }
+
         .process .section-title:after {
             background: var(--secondary);
         }
+
         .process-steps {
             display: flex;
             margin-top: 50px;
@@ -373,6 +435,7 @@
             gap: 20px;
             justify-content: center;
         }
+
         .step {
             flex: 1;
             min-width: 200px;
@@ -381,6 +444,7 @@
             position: relative;
             padding-bottom: 40px;
         }
+
         .step-number {
             width: 60px;
             height: 60px;
@@ -394,13 +458,16 @@
             font-weight: 700;
             margin: 0 auto 20px;
         }
+
         .step h3 {
             margin-bottom: 15px;
             color: var(--secondary);
         }
+
         .step p {
             opacity: 0.9;
         }
+
         .step:not(:last-child):after {
             content: '';
             position: absolute;
@@ -411,77 +478,91 @@
             top: 30px;
             opacity: 0.5;
         }
+
         /* Comparison Section */
         .comparison {
             padding: 120px 8%;
         }
+
         .comparison-cards {
             display: flex;
             gap: 30px;
             margin-top: 50px;
         }
+
         .comparison-card {
             flex: 1;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
+
         .competitors {
-            border: 2px solid rgba(0,0,0,0.1);
+            border: 2px solid rgba(0, 0, 0, 0.1);
         }
+
         .vtr-card {
             background: var(--primary);
             color: white;
             position: relative;
             overflow: hidden;
         }
+
         .vtr-card:after {
             content: 'VTR';
             position: absolute;
             font-size: 15rem;
             font-weight: 800;
-            color: rgba(255,255,255,0.03);
+            color: rgba(255, 255, 255, 0.03);
             bottom: -50px;
             right: -30px;
             z-index: 0;
         }
+
         .comparison-card h3 {
             font-size: 1.8rem;
             margin-bottom: 30px;
             position: relative;
             z-index: 1;
         }
+
         .vtr-card h3 {
             color: var(--secondary);
         }
+
         .comparison-card ul {
             list-style: none;
             position: relative;
             z-index: 1;
         }
+
         .comparison-card li {
             margin-bottom: 15px;
             position: relative;
             padding-left: 30px;
         }
+
         .competitors li:before {
             content: '✖';
             color: #ff4d4d;
             position: absolute;
             left: 0;
         }
+
         .vtr-card li:before {
             content: '✓';
             color: var(--secondary);
             position: absolute;
             left: 0;
         }
+
         /* Clients Section */
         .clients {
             padding: 100px 8%;
             background-color: var(--light);
             text-align: center;
         }
+
         .client-logos {
             display: flex;
             flex-wrap: wrap;
@@ -490,154 +571,344 @@
             margin-top: 50px;
             align-items: center;
         }
+
         .client-logo {
             height: 60px;
             filter: grayscale(100%);
             opacity: 0.6;
             transition: all 0.3s;
         }
+
         .client-logo:hover {
             filter: grayscale(0);
             opacity: 1;
         }
+
         /* CTA Section */
         .cta {
             padding: 120px 8%;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
             text-align: center;
         }
+
         .cta h2 {
             font-size: 3rem;
             margin-bottom: 20px;
         }
+
         .cta p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 40px;
             opacity: 0.9;
         }
+
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
             padding: 80px 8% 30px;
         }
+
         .footer-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 50px;
+            gap: 35px;
             margin-bottom: 50px;
         }
+
         .footer-column {
             flex: 1;
             min-width: 250px;
         }
+
         .footer-column h3 {
             color: var(--secondary);
             margin-bottom: 25px;
             font-size: 1.3rem;
         }
+
         .footer-column ul {
             list-style: none;
         }
+
         .footer-column li {
             margin-bottom: 15px;
         }
+
         .footer-column a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: all 0.3s;
         }
+
         .footer-column a:hover {
             color: var(--secondary);
             padding-left: 5px;
         }
+
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
+
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
             transition: all 0.3s;
         }
+
         .social-links a:hover {
             background: var(--secondary);
             color: var(--dark);
             transform: translateY(-5px);
         }
+
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
         }
+
+        /* कॉन्टैक्ट सेक्शन स्टाइलिंग */
+        .cta {
+            padding: 100px 8%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cta .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+
+        /* फॉर्म स्टाइलिंग */
+        .vtr-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .vtr-submit-btn {
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .vtr-submit-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* डायरेक्ट कॉन्टैक्ट स्टाइलिंग */
+        .direct-contact {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .direct-contact h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+        }
+
+        .contact-link i {
+            font-size: 1.2rem;
+        }
+
+        /* रेस्पॉन्सिव डिज़ाइन */
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .vtr-form {
+                padding: 30px 20px;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3rem;
             }
+
             .section-title {
                 font-size: 2.5rem;
             }
         }
+
         @media (max-width: 992px) {
             .about {
                 flex-direction: column;
             }
+
             .about-img {
                 width: 100%;
             }
+
             .comparison-cards {
                 flex-direction: column;
             }
+
             .step:not(:last-child):after {
                 display: none;
             }
+
             .step {
                 max-width: 100%;
             }
         }
+
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 gap: 20px;
             }
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
             }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
+
             .hero p {
                 font-size: 1rem;
             }
+
             .section-title {
                 font-size: 2rem;
             }
+
             .quote {
                 font-size: 1.4rem;
                 padding: 60px 8%;
             }
+
             .btn {
                 padding: 12px 25px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -656,7 +927,8 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Premium <span>Turnkey</span> Construction Solutions</h1>
-            <p>14+ years of excellence in delivering high-end residential, commercial, industrial, hospitality, and cultural projects across India.</p>
+            <p>14+ years of excellence in delivering high-end residential, commercial, industrial, hospitality, and
+                cultural projects across India.</p>
             <div>
                 <a href="#contact" class="btn">Get Started</a>
                 <a href="#services" class="btn btn-outline">Our Services</a>
@@ -674,15 +946,19 @@
         <div class="about-img"></div>
         <div class="about-content">
             <h2 class="section-title">Who We Are</h2>
-            <p><span class="highlight">VTR</span> is a premium turnkey contracting company founded by three accomplished partners — Ranvir Singh, Arun Singh and Pankaj Sharma — with cumulative experience of more than 14 years successful delivery of high end complex projects.</p>
-            <p>After years of executing high-end residential, commercial, industrial, hospitality, and cultural projects across India, we are now taking our execution excellence to the next level through VTR — a bold, focused step into full-scale design-to-delivery contracting.</p>
-            
+            <p><span class="highlight">VTR</span> is a premium turnkey contracting company founded by three accomplished
+                partners — RANVEER SINGH, Arun Singh and Pankaj Sharma — with cumulative experience of more than 14
+                years successful delivery of high end complex projects.</p>
+            <p>After years of executing high-end residential, commercial, industrial, hospitality, and cultural projects
+                across India, we are now taking our execution excellence to the next level through VTR — a bold, focused
+                step into full-scale design-to-delivery contracting.</p>
+
             <div class="partners">
                 <div class="partner">
                     <div class="partner-img">
-                        <img src="./images/Ranveer.jpeg" alt="Ranvir Singh">
+                        <img src="./images/Ranveer.jpeg" alt="RANVEER SINGH">
                     </div>
-                    <h3>Ranvir Singh</h3>
+                    <h3>RANVEER SINGH</h3>
                     <h4>Chief Execution Manager</h4>
                     <ul>
                         <li>15+ Years Experience</li>
@@ -711,8 +987,9 @@
     <!-- Legacy Section -->
     <section class="legacy" id="legacy">
         <h2 class="section-title">Our Legacy</h2>
-        <p>Over the last 14 years under Maze Construction Projects Solution we have delivered excellence across multiple sectors:</p>
-        
+        <p>Over the last 14 years under Maze Construction Projects Solution we have delivered excellence across multiple
+            sectors:</p>
+
         <div class="legacy-stats">
             <div class="stat-card">
                 <div class="stat-number">160+</div>
@@ -743,7 +1020,7 @@
     <section class="services" id="services">
         <h2 class="section-title">Services We Offer</h2>
         <p>Under VTR, we now deliver start-to-finish turnkey contracting solutions:</p>
-        
+
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
@@ -818,7 +1095,7 @@
     <section class="process" id="process">
         <h2 class="section-title">Our Process</h2>
         <p>Our structured approach ensures seamless project execution from concept to completion:</p>
-        
+
         <div class="process-steps">
             <div class="step">
                 <div class="step-number">1</div>
@@ -856,8 +1133,9 @@
     <!-- Comparison Section -->
     <section class="comparison" id="why-us">
         <h2 class="section-title">Why Choose VTR</h2>
-        <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem; font-style: italic;">"Other contractors build. We craft. We manage. We deliver."</p>
-        
+        <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem; font-style: italic;">"Other contractors
+            build. We craft. We manage. We deliver."</p>
+
         <div class="comparison-cards">
             <div class="comparison-card competitors">
                 <h3>Typical Contractors</h3>
@@ -895,30 +1173,77 @@
     <section class="clients">
         <h2 class="section-title">Our Esteemed Clients</h2>
         <p>Trusted by leading brands across industries</p>
-        
+
         <div class="client-logos">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Audi_logo_detail.png" alt="Audi" class="client-logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Jaguar_logo_detail.png" alt="Jaguar" class="client-logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/JW_Marriott_logo.png" alt="JW Marriott" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Audi_logo_detail.png" alt="Audi"
+                class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Jaguar_logo_detail.png" alt="Jaguar"
+                class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/JW_Marriott_logo.png" alt="JW Marriott"
+                class="client-logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Tata_logo.png" alt="TATA" class="client-logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Hero_MotoCorp_logo.png" alt="Hero" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Hero_MotoCorp_logo.png" alt="Hero"
+                class="client-logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/KPMG_logo.png" alt="KPMG" class="client-logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Lux_Industries_logo.png" alt="LUX Industries" class="client-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Lux_Industries_logo.png" alt="LUX Industries"
+                class="client-logo">
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta" id="contact">
-        <h2>Ready to Build Excellence Together?</h2>
-        <p>Contact us today to discuss your next project with our strategic construction partners.</p>
-        <a href="#contact" class="btn">Get a Free Consultation</a>
+        <div class="container">
+            <h2>Ready to Build Excellence Together</h2>
+            <p class="subtitle">Fill out the form below and our team will contact you within 24 hours</p>
+
+            <div class="contact-form-container">
+                <form id="vtrContactForm" action="https://formspree.io/f/xpwrdvzq" method="POST" class="vtr-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name*</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone*</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectType">Project Type*</label>
+                        <select id="projectType" name="projectType" required>
+                            <option value="" disabled selected>Select Project Type</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial Office</option>
+                            <option value="hospitality">Hotel/Resort</option>
+                            <option value="cultural">Cultural/Religious</option>
+                            <option value="industrial">Industrial</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details*</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Tell us about your construction requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="vtr-submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3>Vision to realty building solutions</h3>
+                <h3>Vision to Realty Building Solutions</h3>
                 <p>Premium turnkey contracting solutions with 14+ years of execution excellence across India.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -951,18 +1276,26 @@
                 <h3>Contact Us</h3>
                 <ul>
                     <li><i class="fas fa-map-marker-alt"></i> B-92, South City 1, Gurugram</li>
-                    <li><i class="fas fa-phone"></i> RANVIR SINGH +91 9871535806</li>
-                    <li><i class="fas fa-phone"></i> ARUN SINGH +91 9718822212</li>
-                    <li><i class="fas fa-envelope"></i> contact@vtrbuild.in</li>
+                    <li><a href="tel:+919871535806" class="">
+                            <i class="fas fa-phone"></i> RANVEER SINGH: +91 9871535806
+                        </a></li>
+                    <li><a href="tel:+919718822212" class="">
+                            <i class="fas fa-phone"></i> ARUN SINGH: +91 9718822212
+                        </a></li>
+                    <li></li><a href="mailto:contact@vtrbuild.in" class="">
+                        <i class="fas fa-envelope"></i> contact@vtrbuild.in
+                    </a></li>
+
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 Vision to realty building solutions(VTR). All Rights Reserved.</p>
+            <p>&copy; 2025 Vision to Realty Building Solutions (VTR). All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
+
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -974,12 +1307,12 @@
         });
 
         // Animation on scroll
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const elements = document.querySelectorAll('.about-content, .about-img, .service-card, .step, .comparison-card');
             elements.forEach(el => {
                 const position = el.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
-                if(position < screenPosition) {
+                if (position < screenPosition) {
                     el.style.opacity = '1';
                     el.style.transform = 'translateY(0)';
                 }
@@ -987,7 +1320,7 @@
         });
 
         // Initialize elements for animation
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Animate elements
             const animateElements = document.querySelectorAll('.about-content, .about-img, .service-card, .step, .comparison-card');
             animateElements.forEach(el => {
@@ -1001,6 +1334,43 @@
                 step.style.transitionDelay = `${index * 0.1}s`;
             });
         });
+        // फॉर्म सबमिशन हैंडलिंग
+        const form = document.getElementById('vtrContactForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            // Loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you! Your inquiry has been submitted. Our team will contact you within 24 hours.');
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        alert("Error: " + data.errors[0].message);
+                    }).catch(() => {
+                        alert('Oops! Something went wrong.');
+                    });
+                }
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }).catch(error => {
+                alert('Error: ' + error.message);
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
     </script>
 </body>
+
 </html>
