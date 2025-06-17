@@ -40,30 +40,30 @@
             z-index: 1000;
         }
 
-    /* Updated Logo */
-.logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--primary);  /* Now applies to full text */
-    letter-spacing: 1px;
-    margin-left: 40px;
+        .logo-wrapper {
+            text-align: center;
+            /* Center aligns both logo and slogan */
+            margin-top: 30px;
+            /* Optional spacing from top */
+        }
 
-    /* margin: auto; */
-}
+        .logo {
+            font-size: 60px;
+            font-weight: 1000;
+            color: var(--primary);
+            letter-spacing: 1px;
+            margin: auto;
+            /* Horizontally centers block elements */
+        }
 
-/* Remove secondary color override */
-.logo span {
-    color: inherit;
-}
+        .slogan {
+            font-size: 16px;
+            color: var(--primary);
+            font-style: italic;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
 
-/* New slogan style */
-.slogan {
-    font-size: 14px;
-    color: var(--primary);
-    font-style: italic;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
-}
         .nav-links {
             display: flex;
             gap: 30px;
@@ -927,9 +927,9 @@
     <nav class="navbar">
         <!-- <div class="logo"style="Color:#1a3a6e">V<span>TR</span></div> -->
         <div class="logo-wrapper">
-  <div class="logo">VTR</div>
-  <div class="slogan">Vision to Reality Building Solutions</div>
-</div>
+            <div class="logo">VTR</div>
+            <div class="slogan">Vision to Reality Building Solutions</div>
+        </div>
 
         <div class="nav-links">
             <a href="#about">About</a>
@@ -962,7 +962,7 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-img">
-</div>
+        </div>
 
         <div class="about-content">
             <h2 class="section-title">Who We Are</h2>
@@ -1195,18 +1195,13 @@
         <p>Trusted by leading brands across industries</p>
 
         <div class="client-logos">
-            <img src="images/clients/audi.png" alt="Audi"
-                class="client-logo">
-            <img src="images/clients/Jaguar.png" alt="Jaguar"
-                class="client-logo">
-            <img src="images/clients/JPMorahgan.jpg" alt="JW Marriott"
-                class="client-logo">
+            <img src="images/clients/audi.png" alt="Audi" class="client-logo">
+            <img src="images/clients/Jaguar.png" alt="Jaguar" class="client-logo">
+            <img src="images/clients/JPMorahgan.jpg" alt="JW Marriott" class="client-logo">
             <img src="images/clients/Tata.jpg" alt="TATA" class="client-logo">
-            <img src="images/clients/Hero.png" alt="Hero"
-                class="client-logo">
+            <img src="images/clients/Hero.png" alt="Hero" class="client-logo">
             <img src="images/clients/KPMG.jpg" alt="KPMG" class="client-logo">
-            <img src="images/clients/LUX-Industries-Ltd_new.png" alt="LUX Industries"
-                class="client-logo">
+            <img src="images/clients/LUX-Industries-Ltd_new.png" alt="LUX Industries" class="client-logo">
         </div>
     </section>
 
