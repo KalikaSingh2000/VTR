@@ -9,7 +9,7 @@
     <style>
         :root {
             --primary: #1a3a6e;
-            --secondary: #3c5680;
+            --secondary: #d4af37;
             --dark: #0d1b2a;
             --light: #f8f9fa;
         }
@@ -40,29 +40,30 @@
             z-index: 1000;
         }
 
-        .logo-wrapper {
-            text-align: center;
-            /* Center aligns both logo and slogan */
-            margin-top: 30px;
-            /* Optional spacing from top */
-        }
+    /* Updated Logo */
+.logo-wrapper {
+    text-align: center;
+    line-height: 1; /* removes extra space from text rendering */
+}
 
-        .logo {
-            font-size: 60px;
-            font-weight: 1000;
-            color: var(--primary);
-            letter-spacing: 1px;
-            margin: auto;
-            /* Horizontally centers block elements */
-        }
+.logo {
+    font-size: 60px;
+    font-weight: 1000;
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1; /* ensures tight spacing below text */
+}
 
-        .slogan {
-            font-size: 16px;
-            color: var(--primary);
-            font-style: italic;
-            margin-top: 6px;
-            letter-spacing: 0.5px;
-        }
+.slogan {
+    font-size: 16px;
+    color: var(--primary);
+    font-style: italic;
+    letter-spacing: 0.3px;
+    margin: 0;           /* 👈 removes any vertical margin */
+    padding: 0;          /* 👈 ensures no padding gap */
+    line-height: 1;      /* 👈 tightens the text line spacing */
+}
 
         .nav-links {
             display: flex;
@@ -927,9 +928,9 @@
     <nav class="navbar">
         <!-- <div class="logo"style="Color:#1a3a6e">V<span>TR</span></div> -->
         <div class="logo-wrapper">
-            <div class="logo">VTR</div>
-            <div class="slogan">Vision to Reality Building Solutions</div>
-        </div>
+  <div class="logo">VTR</div>
+  <div class="slogan">Vision to Reality Building Solutions</div>
+</div>
 
         <div class="nav-links">
             <a href="#about">About</a>
@@ -962,7 +963,7 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-img">
-        </div>
+</div>
 
         <div class="about-content">
             <h2 class="section-title">Who We Are</h2>
@@ -1195,13 +1196,18 @@
         <p>Trusted by leading brands across industries</p>
 
         <div class="client-logos">
-            <img src="images/clients/audi.png" alt="Audi" class="client-logo">
-            <img src="images/clients/Jaguar.png" alt="Jaguar" class="client-logo">
-            <img src="images/clients/JPMorahgan.jpg" alt="JW Marriott" class="client-logo">
+            <img src="images/clients/audi.png" alt="Audi"
+                class="client-logo">
+            <img src="images/clients/Jaguar.png" alt="Jaguar"
+                class="client-logo">
+            <img src="images/clients/JPMorahgan.jpg" alt="JW Marriott"
+                class="client-logo">
             <img src="images/clients/Tata.jpg" alt="TATA" class="client-logo">
-            <img src="images/clients/Hero.png" alt="Hero" class="client-logo">
+            <img src="images/clients/Hero.png" alt="Hero"
+                class="client-logo">
             <img src="images/clients/KPMG.jpg" alt="KPMG" class="client-logo">
-            <img src="images/clients/LUX-Industries-Ltd_new.png" alt="LUX Industries" class="client-logo">
+            <img src="images/clients/LUX-Industries-Ltd_new.png" alt="LUX Industries"
+                class="client-logo">
         </div>
     </section>
 
