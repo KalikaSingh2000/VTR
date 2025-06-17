@@ -46,23 +46,33 @@
     line-height: 1; /* removes extra space from text rendering */
 }
 
+
+.logo-block {
+    display: inline-block;   /* This keeps logo and slogan tightly together */
+    width: auto;
+}
+
 .logo {
     font-size: 60px;
     font-weight: 1000;
     color: var(--primary);
-    letter-spacing: 1px;
+    letter-spacing: 15px;  /* 👈 Adds spacing between V T R */
+    line-height: 1;
     margin: 0;
-    line-height: 1; /* ensures tight spacing below text */
+    padding: 0;
+    white-space: nowrap;   /* Keeps "V T R" on one line */
 }
 
 .slogan {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--primary);
     font-style: italic;
-    letter-spacing: 0.3px;
-    margin: 0;           /* 👈 removes any vertical margin */
-    padding: 0;          /* 👈 ensures no padding gap */
-    line-height: 1;      /* 👈 tightens the text line spacing */
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    width: 100%;           /* 👈 Same width as .logo */
+    text-align: center;
 }
 
         .nav-links {
@@ -927,10 +937,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <!-- <div class="logo"style="Color:#1a3a6e">V<span>TR</span></div> -->
-        <div class="logo-wrapper">
-  <div class="logo">VTR</div>
-  <div class="slogan">Vision to Reality Building Solutions</div>
+    <div class="logo-wrapper">
+  <div class="logo-block">
+    <div class="logo">V T R</div>
+    <div class="slogan">Vision to Realty Building Solutions</div>
+  </div>
 </div>
+
 
         <div class="nav-links">
             <a href="#about">About</a>
